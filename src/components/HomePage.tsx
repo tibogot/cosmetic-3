@@ -60,7 +60,7 @@ export const HomePage = () => {
 
       <section className="w-full bg-red-600 py-12 md:py-20 flex-grow">
         <div className="px-4 md:px-8 ">
-          <div className="prose prose-lg w-1/2 text-center mx-auto">
+          <div className="prose prose-lg w-full text-center mx-auto md:w-1/2">
             <p>
               At COSMETIC, we believe in the power of natural ingredients and
               sustainable beauty practices. Our journey began with a simple
