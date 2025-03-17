@@ -19,7 +19,7 @@ export const HomePage = () => {
       );
 
       try {
-        const response = await client.getAllProducts({ first: 3 });
+        const response = await client.getAllProducts({ first: 4 }); // Changed from 3 to 4
         setProducts(response.products);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -58,7 +58,7 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <section className="w-full bg-red-600 py-12 md:py-20 flex-grow">
+      <section className="w-full py-12 md:py-20 flex-grow">
         <div className="px-4 md:px-8 ">
           <div className="text-2xl prose prose-lg w-full text-center mx-auto lg:w-2/3">
             <p>
@@ -75,18 +75,18 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="w-full bg-white py-12 md:py-20 flex-grow">
+      <section className="w-ful py-12  flex-grow">
         <div className="px-4 md:px-8">
-          <h2 className="text-4xl font-bold mb-12 font-neue">
-            Featured Products
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-[400px]">
+          <h2 className="text-4xl font-bold mb-12 ">Featured Products</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[400px]">
+            {" "}
+            {/* Updated grid */}
             {loading
-              ? Array(3)
+              ? Array(4) // Changed from 3 to 4
                   .fill(0)
                   .map((_, i) => (
                     <div key={i} className="animate-pulse">
-                      <div className="bg-gray-200 aspect-square rounded-lg mb-4"></div>
+                      <div className="bg-gray-200 aspect-square  mb-4"></div>
                       <div className="bg-gray-200 h-4 w-2/3 mb-2 rounded"></div>
                       <div className="bg-gray-200 h-4 w-1/3 rounded"></div>
                     </div>
