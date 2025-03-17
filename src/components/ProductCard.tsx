@@ -34,7 +34,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             </>
           ))}
       </div>
-      <div className="p-4">
+      <div>
         <h2 className="text-base md:text-lg font-semibold text-gray-800 truncate">
           {product.title}
         </h2>

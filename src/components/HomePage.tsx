@@ -48,7 +48,7 @@ export const HomePage = () => {
         {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" /> */}
         <div className="absolute bottom-0 w-full">
           <div className="px-4 md:px-8 pb-8 md:pb-12">
-            <h1 className="text-5xl md:text-6xl font-bold text-white font-neue mb-4">
+            <h1 className="text-5xl md:text-6xl  text-white font-neue mb-4">
               Natural Beauty
             </h1>
             <p className="text-lg md:text-xl text-white/90 font-neue max-w-lg">
