@@ -37,7 +37,7 @@ export const Nav = () => {
       style={{ overflow: "visible" }}
     >
       <nav className="max-w-[2000px] mx-auto">
-        <div className="h-16 px-4 flex items-center justify-between">
+        <div className="h-16 px-8 flex items-center justify-between">
           <Link
             to="/"
             onClick={handleClick}
