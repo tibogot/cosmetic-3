@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { ShoppingCart, List, X } from "@phosphor-icons/react";
-import { useStore } from "../store/useStore";
+import { useStore } from "../features/shop/store";
 import { useState } from "react";
 
 export const Nav = () => {

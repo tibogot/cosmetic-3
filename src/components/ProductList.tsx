@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { ShopifyProduct } from "../types/store.types";
-import { ShopifyClient } from "../utils/shopify";
-import { useStore } from "../store/useStore";
+import { ShopifyProduct } from "../features/shop/shopify";
+import { ShopifyClient } from "../features/shop/shopify";
+import { useStore } from "../features/shop/store";
 import { ProductCard } from "./ProductCard";
 import { FunnelSimple } from "@phosphor-icons/react";
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { ShopifyClient } from "../utils/shopify";
-import { ShopifyProduct } from "../types/store.types";
-import { useStore } from "../store/useStore";
+import { ShopifyProduct } from "../features/shop/shopify";
+import { ShopifyClient } from "../features/shop/shopify";
+import { useStore } from "../features/shop/store";
 import { ProductCard } from "./ProductCard";
 
 export const HomePage = () => {

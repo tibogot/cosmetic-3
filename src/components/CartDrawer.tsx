@@ -1,4 +1,4 @@
-import { useStore } from "../store/useStore";
+import { useStore } from "../features/shop/store";
 import { X } from "@phosphor-icons/react";
 
 export const CartDrawer = () => {

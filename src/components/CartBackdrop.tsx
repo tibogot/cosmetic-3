@@ -1,4 +1,4 @@
-import { useStore } from "../store/useStore";
+import { useStore } from "../features/shop/store";
 
 export const CartBackdrop = () => {
   const isCartOpen = useStore((state) => state.isCartOpen);

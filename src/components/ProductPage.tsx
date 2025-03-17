@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ShopifyProduct, ShopifyVariant } from "../types/store.types";
-import { ShopifyClient } from "../utils/shopify";
-import { useStore } from "../store/useStore";
+import { ShopifyProduct, ShopifyVariant } from "../features/shop/shopify";
+import { ShopifyClient } from "../features/shop/shopify";
+import { useStore } from "../features/shop/store";
 import { ModelViewer } from "./ModelViewer";
 
 export const ProductPage = () => {

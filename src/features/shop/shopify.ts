@@ -1,5 +1,32 @@
 import { GraphQLClient } from "graphql-request";
-import { ShopifyProduct } from "../types/store.types";
+
+export interface ShopifyProduct {
+  id: string;
+  title: string;
+  handle: string;
+  description: string;
+  images: ShopifyImage[];
+  variants: ShopifyVariant[];
+  price: string;
+}
+
+export interface ShopifyVariant {
+  id: string;
+  title: string;
+  price: string;
+  available: boolean;
+}
+
+export interface ShopifyImage {
+  id: string;
+  src: string;
+  altText: string | null;
+}
+
+export interface ShopifyAccess {
+  accessToken: string;
+  shopDomain: string;
+}
 
 // Add type definitions for API responses
 interface ShopifyImageEdge {

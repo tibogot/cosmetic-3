@@ -1,5 +1,37 @@
 import { create } from "zustand";
-import { StoreState } from "../types/store.types";
+import { ShopifyProduct, ShopifyVariant, ShopifyAccess } from "./shopify";
+
+export interface CartItem {
+  id: string;
+  quantity: number;
+  variant: ShopifyVariant;
+  product: ShopifyProduct;
+}
+
+export interface CartState {
+  isLoading: boolean;
+  error: string | null;
+  lastUpdated: number;
+}
+
+export interface StoreState {
+  isCartOpen: boolean;
+  cartItems: CartItem[];
+  shopifyAccess: ShopifyAccess | null;
+  cartState: CartState;
+
+  // Actions
+  setCartOpen: (isOpen: boolean) => void;
+  addToCart: (product: ShopifyProduct, variant: ShopifyVariant) => void;
+  removeFromCart: (itemId: string) => void;
+  updateQuantity: (itemId: string, quantity: number) => void;
+  clearCart: () => void;
+  setShopifyAccess: (access: ShopifyAccess | null) => void;
+  saveCartToStorage: () => void;
+  loadCartFromStorage: () => void;
+  setCartError: (error: string | null) => void;
+  setCartLoading: (isLoading: boolean) => void;
+}
 
 const CART_STORAGE_KEY = "cosmetic-cart";
 

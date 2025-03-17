@@ -4,7 +4,7 @@ import { HomePage } from "./components/HomePage";
 import { ProductList } from "./components/ProductList";
 import { ProductPage } from "./components/ProductPage";
 import { Nav } from "./components/Nav";
-import { useStore } from "./store/useStore";
+import { useStore } from "./features/shop/store";
 import { CartDrawer } from "./components/CartDrawer";
 import { CartBackdrop } from "./components/CartBackdrop";
 import { Footer } from "./components/Footer";
