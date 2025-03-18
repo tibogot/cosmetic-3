@@ -86,7 +86,7 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-20  bg-red-300">
+      <section className="w-full py-12 md:py-20  bg-green-600">
         <div className="px-4 md:px-8">
           <div className="text-xl w-full text-center mx-auto lg:w-1/2 mb-12">
             <p>
@@ -110,11 +110,11 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <section className="w-full h-screen  bg-red-800 px-4 md:px-8 flex py-12 md:py-20">
+      <section className="w-full h-screen px-4 md:px-8 flex py-12 md:py-20">
         <div className="flex-1 bg-blue-400 relative">
           {/* Image - Absolute Positioned */}
           <img
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover grayscale"
             src="https://images.unsplash.com/photo-1731328667980-9ea08c5edc07?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="image description"
           />
@@ -136,14 +136,16 @@ export const HomePage = () => {
           />
         </div>
       </section>
-      <section className="w-full py-12 md:py-20  bg-blue-300">
+      <section className="w-full py-12 md:py-20">
         <div className="px-4 md:px-8">
-          <div className="text-xl w-full text-center mx-auto lg:w-1/2 mb-12">
-            <p>
+          <div className=" w-full text-center mx-auto lg:w-1/3 mb-12  font-bold">
+            <p className="text-xl uppercase">
               At COSMETIC, we believe in the power of natural ingredients and
-              sustainable beauty practices. Our journey began with a simple
-              mission: to provide high-quality, organic cosmetics that enhance
-              your natural beauty while caring for our planet.
+              sustainable beauty practices.
+            </p>
+            <p className="text-sm py-4">
+              At COSMETIC, we believe in the power of natural ingredients and
+              sustainable beauty practices.
             </p>
           </div>
           <h2 className="text-l font-bold  flex justify-center underline uppercase">
