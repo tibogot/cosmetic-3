@@ -38,11 +38,12 @@ export const HomePage = () => {
         style={{ height: "calc(100svh - 4rem)" }}
       >
         <img
-          src="/Image_26.webp" // This will now look in the public folder
+          src="https://images.pexels.com/photos/3373716/pexels-photo-3373716.jpeg" // This will now look in the public folder
+          // src="/hero shao.png" // This will now look in the public folder
           alt="Hero"
           loading="eager"
           fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover grayscale"
           style={{ willChange: "transform" }} // Optimize performance
         />
         {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" /> */}
@@ -102,6 +103,48 @@ export const HomePage = () => {
               src="https://images.unsplash.com/photo-1731328667980-9ea08c5edc07?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="image description"
             />
+          </div>
+          <h2 className="text-l font-bold  flex justify-center underline uppercase">
+            Shop Now
+          </h2>
+        </div>
+      </section>
+
+      <section className="w-full h-screen  bg-red-800 px-4 md:px-8 flex py-12 md:py-20">
+        <div className="flex-1 bg-blue-400 relative">
+          {/* Image - Absolute Positioned */}
+          <img
+            className="absolute inset-0 w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1731328667980-9ea08c5edc07?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="image description"
+          />
+
+          {/* Text Container - Centered */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center justify-center w-1/2 text-center text-white font-bold">
+            <h1 className="text-3xl">Your Text Here</h1>
+            <p>
+              Our journey began with a simple mission: to provide high-quality.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex-1 bg-orange-400">
+          <img
+            className="w-full h-full object-cover cursor-pointer mb-12"
+            src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="image description"
+          />
+        </div>
+      </section>
+      <section className="w-full py-12 md:py-20  bg-blue-300">
+        <div className="px-4 md:px-8">
+          <div className="text-xl w-full text-center mx-auto lg:w-1/2 mb-12">
+            <p>
+              At COSMETIC, we believe in the power of natural ingredients and
+              sustainable beauty practices. Our journey began with a simple
+              mission: to provide high-quality, organic cosmetics that enhance
+              your natural beauty while caring for our planet.
+            </p>
           </div>
           <h2 className="text-l font-bold  flex justify-center underline uppercase">
             Shop Now
