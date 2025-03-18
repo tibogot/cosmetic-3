@@ -58,26 +58,12 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <section className="w-full py-12 md:py-20 flex-grow">
-        <div className="px-4 md:px-8 ">
-          <div className="text-2xl prose prose-lg w-full text-center mx-auto lg:w-2/3">
-            <p>
-              At COSMETIC, we believe in the power of natural ingredients and
-              sustainable beauty practices. Our journey began with a simple
-              mission: to provide high-quality, organic cosmetics that enhance
-              your natural beauty while caring for our planet.
-            </p>
-            <p>
-              Every product in our collection is carefully crafted using
-              ethically sourced ingredients, ensuring both effectiveness and
-              environmental responsibility.
-            </p>
-          </div>
-        </div>
-      </section>
       <section className="w-ful py-12  flex-grow">
         <div className="px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-12 ">Featured Products</h2>
+          <div className="flex justify-between">
+            <h2 className="text-2xl font-bold mb-12 ">Featured Products</h2>
+            <h2 className="text-l font-bold mb-12 ">Shop Now</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[400px]">
             {" "}
             {/* Updated grid */}
@@ -97,6 +83,35 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
+      <section className="w-full py-12 md:py-20 ">
+        <div className="px-4 md:px-8">
+          <div className="text-2xl w-full text-center mx-auto lg:w-2/3 mb-12">
+            <p>
+              At COSMETIC, we believe in the power of natural ingredients and
+              sustainable beauty practices. Our journey began with a simple
+              mission: to provide high-quality, organic cosmetics that enhance
+              your natural beauty while caring for our planet.
+            </p>
+            <p>
+              Every product in our collection is carefully crafted using
+              ethically sourced ingredients, ensuring both effectiveness and
+              environmental responsibility.
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <img
+              className="w-[300px] h-[400px] object-cover cursor-pointer mb-12"
+              src="https://images.unsplash.com/photo-1731328667980-9ea08c5edc07?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="image description"
+            />
+          </div>
+          <h2 className="text-l font-bold mb-12 flex justify-center">
+            Shop Now
+          </h2>
+        </div>
+      </section>
+
       <section className=" py-12 flex-grow bg-gray-300">
         <div className="px-4 md:px-8">
           <h2 className="text-2xl font-bold mb-12">Our Mission</h2>
