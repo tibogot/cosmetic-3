@@ -26,7 +26,7 @@ export const Nav = () => {
   };
 
   const linkClass = (path: string) => `
-    text-lg ${location.pathname === path ? "text-white" : "text-white/80"}
+    text-base ${location.pathname === path ? "text-white" : "text-white/80"}
     hover:text-white transition-colors
   `;
 
@@ -47,21 +47,21 @@ export const Nav = () => {
           {/* Left Section - Navigation Links */}
           <div className="hidden md:flex items-center gap-8 select-none">
             <Link to="/" onClick={handleClick} className={linkClass("/")}>
-              Home
+              HOME
             </Link>
             <Link
               to="/shop"
               onClick={handleClick}
               className={linkClass("/shop")}
             >
-              Shop
+              SHOP
             </Link>
             <Link
               to="/about"
               onClick={handleClick}
               className={linkClass("/about")}
             >
-              About
+              ABOUT
             </Link>
           </div>
 
@@ -88,7 +88,7 @@ export const Nav = () => {
             >
               <ShoppingCart size={24} weight="regular" />
               {totalItems > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 bg-white text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-2 -right-3 bg-white text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {totalItems}
                 </span>
               )}

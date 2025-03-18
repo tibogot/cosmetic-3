@@ -40,13 +40,13 @@ export const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">Stay Updated</h3>
             <p className="text-white/80 mb-4">Subscribe to our newsletter</p>
-            <form className="flex gap-2">
+            <form className="flex flex-col md:flex-row gap-2 w-full">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-4 py-2 rounded-lg bg-white/10 text-white placeholder:text-white/50 flex-1"
+                className="px-4 py-2 rounded-lg bg-white/10 text-white placeholder:text-white/50 flex-1 w-full md:w-auto"
               />
-              <button className="px-4 py-2 bg-white text-black rounded-lg hover:bg-white/90 transition-colors">
+              <button className="px-4 py-2 bg-white text-black rounded-lg hover:bg-white/90 transition-colors w-full md:w-auto">
                 Subscribe
               </button>
             </form>
