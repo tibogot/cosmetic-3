@@ -38,7 +38,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <h2 className="text-base md:text-lg font-semibold text-gray-800 truncate">
           {product.title}
         </h2>
-        <p className="text-lg md:text-xl font-bold text-blue-600">
+        <p className="text-base md:text-base font-bold text-black">
           ${product.price}
         </p>
       </div>

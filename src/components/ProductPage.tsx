@@ -193,7 +193,7 @@ export const ProductPage = () => {
                       <img
                         src={image.src}
                         alt={image.altText || `Product view ${index + 1}`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover "
                       />
                     </button>
                   ))}
@@ -203,9 +203,7 @@ export const ProductPage = () => {
 
             {/* Product Details Section */}
             <div className="flex flex-col max-w-3xl mx-auto xl:max-w-none space-y-6">
-              <h1 className="text-4xl font-bold font-neue mb-4">
-                {product.title}
-              </h1>
+              <h1 className="text-4xl font-bold  mb-4">{product.title}</h1>
               <p className="text-2xl font-bold text-gray-900 mb-6">
                 ${selectedVariant?.price || product.price}
               </p>

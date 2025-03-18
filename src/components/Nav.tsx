@@ -1,5 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
-import { ShoppingCart, List, X } from "@phosphor-icons/react";
+import {
+  ShoppingCart,
+  List,
+  X,
+  MagnifyingGlass,
+  User,
+} from "@phosphor-icons/react";
 import { useStore } from "../features/shop/store";
 import { useState } from "react";
 
@@ -37,16 +43,8 @@ export const Nav = () => {
       style={{ overflow: "visible" }}
     >
       <nav className="max-w-[2000px] mx-auto">
-        <div className="h-16 px-8 flex items-center justify-between">
-          <Link
-            to="/"
-            onClick={handleClick}
-            className="text-2xl font-bold text-white select-none"
-          >
-            COSMETIC
-          </Link>
-
-          {/* Desktop Menu */}
+        <div className="h-16 px-8 flex items-center justify-between relative">
+          {/* Left Section - Navigation Links */}
           <div className="hidden md:flex items-center gap-8 select-none">
             <Link to="/" onClick={handleClick} className={linkClass("/")}>
               Home
@@ -65,15 +63,30 @@ export const Nav = () => {
             >
               About
             </Link>
+          </div>
+
+          {/* Center Section - Logo */}
+          <Link
+            to="/"
+            onClick={handleClick}
+            className="text-2xl font-bold text-white select-none absolute left-1/2 -translate-x-1/2"
+          >
+            COSMETIC
+          </Link>
+
+          {/* Right Section - Icons */}
+          <div className="hidden md:flex items-center gap-6 select-none">
+            <button className="text-white/80 hover:text-white transition-colors">
+              <MagnifyingGlass size={24} weight="regular" />
+            </button>
+            <button className="text-white/80 hover:text-white transition-colors">
+              <User size={24} weight="regular" />
+            </button>
             <button
               onClick={() => setCartOpen(true)}
-              className="relative flex items-center justify-center text-white/80 hover:text-white transition-colors bg-transparent border-none"
+              className="relative flex items-center justify-center text-white/80 hover:text-white transition-colors"
             >
-              <ShoppingCart
-                size={24}
-                weight="regular"
-                className="text-current"
-              />
+              <ShoppingCart size={24} weight="regular" />
               {totalItems > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 bg-white text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {totalItems}
@@ -85,16 +98,16 @@ export const Nav = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white/80 hover:text-white transition-colors bg-transparent border-none"
+            className="md:hidden text-white/80 hover:text-white transition-colors"
           >
             <List size={24} />
           </button>
 
-          {/* Mobile Menu Overlay */}
+          {/* Mobile Menu Overlay - Update to include new icons */}
           <div className={mobileMenuClass}>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="absolute top-5 right-8 text-white hover:text-white/80 p-0 m-0 border-0 bg-transparent"
+              className="absolute top-5 right-8 text-white hover:text-white/80"
             >
               <X size={24} />
             </button>
@@ -102,38 +115,48 @@ export const Nav = () => {
             <Link
               to="/"
               onClick={handleClick}
-              className="text-2xl text-white/80 hover:text-white transition-colors select-none"
+              className="text-2xl text-white/80 hover:text-white transition-colors"
             >
               Home
             </Link>
             <Link
               to="/shop"
               onClick={handleClick}
-              className="text-2xl text-white/80 hover:text-white transition-colors select-none"
+              className="text-2xl text-white/80 hover:text-white transition-colors"
             >
               Shop
             </Link>
             <Link
               to="/about"
               onClick={handleClick}
-              className="text-2xl text-white/80 hover:text-white transition-colors select-none"
+              className="text-2xl text-white/80 hover:text-white transition-colors"
             >
               About
             </Link>
-            <button
-              onClick={() => {
-                setCartOpen(true);
-                setIsMenuOpen(false);
-              }}
-              className="relative flex items-center justify-center text-white/80 hover:text-white transition-colors bg-transparent border-none"
-            >
-              <ShoppingCart size={24} weight="regular" />
-              {totalItems > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 bg-white text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                  {totalItems}
-                </span>
-              )}
-            </button>
+
+            {/* Mobile Icons */}
+            <div className="flex items-center gap-8 mt-8">
+              <button className="text-white/80 hover:text-white transition-colors">
+                <MagnifyingGlass size={24} weight="regular" />
+              </button>
+              <button className="text-white/80 hover:text-white transition-colors">
+                <User size={24} weight="regular" />
+              </button>
+              <button
+                onClick={() => {
+                  setCartOpen(true);
+                  setIsMenuOpen(false);
+                }}
+                className="relative flex items-center justify-center text-white/80 hover:text-white transition-colors"
+              >
+                <ShoppingCart size={24} weight="regular" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 bg-white text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </nav>

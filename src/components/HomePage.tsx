@@ -48,10 +48,10 @@ export const HomePage = () => {
         {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" /> */}
         <div className="absolute bottom-0 w-full">
           <div className="px-4 md:px-8 pb-8 md:pb-12">
-            <h1 className="text-5xl md:text-6xl  text-white font-neue mb-4">
-              Natural Beauty
+            <h1 className="text-5xl md:text-8xl  text-white mb-4 max-w-lg">
+              RADICAL FRAGRANCE
             </h1>
-            <p className="text-lg md:text-xl text-white/90 font-neue max-w-lg">
+            <p className="text-lg md:text-base text-white/90  max-w-lg uppercase">
               Discover our collection of natural and organic cosmetics
             </p>
           </div>
@@ -77,7 +77,7 @@ export const HomePage = () => {
       </section>
       <section className="w-ful py-12  flex-grow">
         <div className="px-4 md:px-8">
-          <h2 className="text-4xl font-bold mb-12 ">Featured Products</h2>
+          <h2 className="text-2xl font-bold mb-12 ">Featured Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[400px]">
             {" "}
             {/* Updated grid */}
@@ -94,6 +94,29 @@ export const HomePage = () => {
               : products.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
+          </div>
+        </div>
+      </section>
+      <section className=" py-12 flex-grow bg-gray-300">
+        <div className="px-4 md:px-8">
+          <h2 className="text-2xl font-bold mb-12">Our Mission</h2>
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="flex-1">
+              <h3 className="text-xl font-bold mb-4">Sustainable Beauty</h3>
+              <p>
+                Our commitment to sustainability goes beyond our products. We
+                strive to minimize our environmental impact at every stage of
+                production, from sourcing ingredients to packaging.
+              </p>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-xl font-bold mb-4">Natural Ingredients</h3>
+              <p>
+                We believe that nature provides the best solutions for healthy
+                skin. That's why we use only the finest natural ingredients in
+                our products, free from harmful chemicals and toxins.
+              </p>
+            </div>
           </div>
         </div>
       </section>
