@@ -1,16 +1,23 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ShopifyProduct } from "../features/shop/shopify";
 import { ShopifyClient } from "../features/shop/shopify";
 import { useStore } from "../features/shop/store";
 import { ProductCard } from "./ProductCard";
+import { FeaturedProduct } from "./FeaturedProduct";
 
 export const HomePage = () => {
-  const [products, setProducts] = useState<ShopifyProduct[]>([]);
+  const [featuredProducts, setFeaturedProducts] = useState<ShopifyProduct[]>(
+    []
+  );
+  const [secondaryProducts, setSecondaryProducts] = useState<ShopifyProduct[]>(
+    []
+  );
   const [loading, setLoading] = useState(true);
   const shopifyAccess = useStore((state) => state.shopifyAccess);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchAllProducts = async () => {
       if (!shopifyAccess) return;
 
       const client = new ShopifyClient(
@@ -19,8 +26,16 @@ export const HomePage = () => {
       );
 
       try {
-        const response = await client.getAllProducts({ first: 4 }); // Changed from 3 to 4
-        setProducts(response.products);
+        setLoading(true);
+        // Fetch first 8 products to split them later
+        const response = await client.getAllProducts({ first: 8 });
+
+        // Split products into two groups
+        const firstFour = response.products.slice(0, 4);
+        const nextFour = response.products.slice(4, 8);
+
+        setFeaturedProducts(firstFour);
+        setSecondaryProducts(nextFour);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
@@ -28,7 +43,7 @@ export const HomePage = () => {
       }
     };
 
-    fetchProducts();
+    fetchAllProducts();
   }, [shopifyAccess]);
 
   return (
@@ -82,7 +97,7 @@ export const HomePage = () => {
                       <div className="bg-gray-200 h-4 w-1/3 rounded"></div>
                     </div>
                   ))
-              : products.map((product) => (
+              : featuredProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
           </div>
@@ -147,6 +162,17 @@ export const HomePage = () => {
         </div>
       </section>
 
+      <section className="w-full py-12 md:py-20 bg-gray-100">
+        <div className="px-4 md:px-8">
+          <h2 className="text-2xl font-bold mb-12 uppercase text-center">
+            Featured Product
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <FeaturedProduct handle="selling-plans-ski-wax" />
+          </div>
+        </div>
+      </section>
+
       <section className="w-full py-12 md:py-20">
         <div className="px-4 md:px-8">
           <div className=" w-full text-center mx-auto lg:w-1/3 mb-12  font-bold">
@@ -174,7 +200,10 @@ export const HomePage = () => {
               Shop Now
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[400px]">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[400px]"
+            id="product2"
+          >
             {" "}
             {/* Updated grid */}
             {loading
@@ -187,7 +216,7 @@ export const HomePage = () => {
                       <div className="bg-gray-200 h-4 w-1/3 rounded"></div>
                     </div>
                   ))
-              : products.map((product) => (
+              : secondaryProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
           </div>
