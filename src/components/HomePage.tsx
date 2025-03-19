@@ -34,7 +34,7 @@ export const HomePage = () => {
   return (
     <div className="w-full flex flex-col">
       <section
-        className="relative w-full flex-shrink-0 bg-gray-300"
+        className="relative w-full flex-shrink-0 bg-gray-900"
         style={{ height: "calc(100svh - 4rem)" }}
       >
         <img
