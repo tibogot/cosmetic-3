@@ -88,7 +88,7 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-20  bg-green-600">
+      <section className="w-full py-12 md:py-20  bg-[#35322B] text-white">
         <div className="px-4 md:px-8">
           <div className="text-xl w-full text-center mx-auto lg:w-1/2 mb-12">
             <p>
@@ -154,7 +154,7 @@ export const HomePage = () => {
               At COSMETIC, we believe in the power of natural ingredients and
               sustainable beauty practices.
             </p>
-            <p className="text-sm py-4 ">
+            <p className="text-sm py-4 mx-auto max-w-xs">
               At COSMETIC, we believe in the power of natural ingredients and
               sustainable beauty practices.
             </p>
@@ -163,6 +163,42 @@ export const HomePage = () => {
             Shop Now
           </h2>
         </div>
+      </section>
+      <section className="w-ful py-12  flex-grow">
+        <div className="px-4 md:px-8">
+          <div className="flex justify-between">
+            <h2 className="text-2xl font-bold mb-12 uppercase ">
+              Featured Products
+            </h2>
+            <h2 className="text-l font-bold mb-12 uppercase underline">
+              Shop Now
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[400px]">
+            {" "}
+            {/* Updated grid */}
+            {loading
+              ? Array(4) // Changed from 3 to 4
+                  .fill(0)
+                  .map((_, i) => (
+                    <div key={i} className="animate-pulse">
+                      <div className="bg-gray-200 aspect-square  mb-4"></div>
+                      <div className="bg-gray-200 h-4 w-2/3 mb-2 rounded"></div>
+                      <div className="bg-gray-200 h-4 w-1/3 rounded"></div>
+                    </div>
+                  ))
+              : products.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+          </div>
+        </div>
+      </section>
+      <section className="w-full h-[80vh]  ">
+        <img
+          className="w-full h-full object-cover"
+          src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="image description"
+        />
       </section>
 
       <section className=" py-12 flex-grow bg-gray-300">
