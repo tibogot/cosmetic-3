@@ -38,7 +38,7 @@ export const HomePage = () => {
         style={{ height: "calc(100svh - 4rem)" }}
       >
         <img
-          src="public\image 312.png" // This will now look in the public folder
+          src="/image 312.png" // This will now look in the public folder
           // src="/hero shao.png" // This will now look in the public folder
           alt="Hero"
           loading="eager"
