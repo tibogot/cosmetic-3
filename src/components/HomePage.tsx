@@ -43,7 +43,7 @@ export const HomePage = () => {
           alt="Hero"
           loading="eager"
           fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-cover grayscale"
+          className="absolute inset-0 w-full h-full object-cover grayscale brightness-[0.8]"
           style={{ willChange: "transform" }} // Optimize performance
         />
         {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" /> */}
@@ -62,7 +62,9 @@ export const HomePage = () => {
       <section className="w-ful py-12  flex-grow">
         <div className="px-4 md:px-8">
           <div className="flex justify-between">
-            <h2 className="text-2xl font-bold mb-12 ">Featured Products</h2>
+            <h2 className="text-2xl font-bold mb-12 uppercase ">
+              Featured Products
+            </h2>
             <h2 className="text-l font-bold mb-12 uppercase underline">
               Shop Now
             </h2>
@@ -110,8 +112,11 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <section className="w-full h-screen px-4 md:px-8 flex py-12 md:py-20">
-        <div className="flex-1 bg-blue-400 relative">
+      <section
+        className="w-full min-h-screen px-4 md:px-8 flex flex-col md:flex-row py-12 md:py-20"
+        id="doubleimg"
+      >
+        <div className="flex-1 relative min-h-[50vh] md:min-h-full mb-4 md:mb-0">
           {/* Image - Absolute Positioned */}
           <img
             className="absolute inset-0 w-full h-full object-cover grayscale"
@@ -120,22 +125,28 @@ export const HomePage = () => {
           />
 
           {/* Text Container - Centered */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center justify-center w-1/2 text-center text-white font-bold">
-            <h1 className="text-3xl">Your Text Here</h1>
-            <p>
-              Our journey began with a simple mission: to provide high-quality.
-            </p>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center text-white p-4 md:p-8 w-full md:w-2/3">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+                Your Text Here
+              </h1>
+              <p className="text-sm md:text-base lg:text-lg">
+                Our journey began with a simple mission: to provide
+                high-quality.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="flex-1 bg-orange-400">
+        <div className="flex-1 relative min-h-[50vh] md:min-h-full">
           <img
-            className="w-full h-full object-cover cursor-pointer mb-12"
+            className="w-full h-full object-cover absolute inset-0"
             src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="image description"
           />
         </div>
       </section>
+
       <section className="w-full py-12 md:py-20">
         <div className="px-4 md:px-8">
           <div className=" w-full text-center mx-auto lg:w-1/3 mb-12  font-bold">
@@ -143,7 +154,7 @@ export const HomePage = () => {
               At COSMETIC, we believe in the power of natural ingredients and
               sustainable beauty practices.
             </p>
-            <p className="text-sm py-4">
+            <p className="text-sm py-4 ">
               At COSMETIC, we believe in the power of natural ingredients and
               sustainable beauty practices.
             </p>
