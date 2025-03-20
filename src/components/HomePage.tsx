@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { ShopifyProduct } from "../features/shop/shopify";
 import { ShopifyClient } from "../features/shop/shopify";
 import { useStore } from "../features/shop/store";
@@ -222,7 +222,7 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="w-full h-[80vh]  ">
+      <section className="w-full h-[90vh]  ">
         <img
           className="w-full h-full object-cover"
           src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
